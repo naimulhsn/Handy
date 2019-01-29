@@ -50,15 +50,16 @@ public class SignUp extends AppCompatActivity {
     String[] batchs = {"Select Batch","8", "7", "6", "5"};
 
 
-    String academic_id, fullname, gender = "", phone1, phone2, email, blood = "", current_address, hometown, university = "", dept = "", batch = "", pass, pass_confirm;
+    String academic_id, fullname, gender = "", phone1, phone2, email, blood = "", current_address, hometown,
+            university = "", dept = "", batch = "", pass, pass_confirm;
 
     SharedPreferences userInfoPref;
     // Firebase  Auth
     private FirebaseAuth mAuth;
-    String userid;
+    String userid,uId;
 
     FirebaseDatabase database;
-    DatabaseReference  myRef,userRef,routinRef;
+    DatabaseReference  myRef,userRef;
 
     int cnt;
 
@@ -395,6 +396,7 @@ public class SignUp extends AppCompatActivity {
     private void setDisplayName() {
         FirebaseUser user = mAuth.getCurrentUser();
         if(user!=null){
+            uId=user.getUid();
             UserProfileChangeRequest profileChangeRequest=
                     new UserProfileChangeRequest.Builder()
                     .setDisplayName(userid)
@@ -434,6 +436,9 @@ public class SignUp extends AppCompatActivity {
         modelBatchStudent.setCurrent_address(current_address);
         modelBatchStudent.setHometown(hometown);
         modelBatchStudent.setUserId(userid);
+        modelBatchStudent.setuId(uId);
+        modelBatchStudent.setAdmin("False");
+        modelBatchStudent.setApproved("False");
 
         myRef.child(""+university+dept).child(batch).child(userid).setValue(modelBatchStudent).
                 addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -491,7 +496,7 @@ public class SignUp extends AppCompatActivity {
         editor.apply();
 
         progressBar.setVisibility(View.GONE);
-        Intent intent=new Intent(this,Home.class);
+        Intent intent=new Intent(this,TestActivity.class);
         startActivity(intent);
         finish();
 
@@ -516,11 +521,13 @@ public class SignUp extends AppCompatActivity {
         if (fullname.isEmpty()) {
             isEverythingOk = false;
             e_fullname_lay.setError("You must enter your Academic Name");
+            e_fullname_lay.requestFocus();
         } else {
             for (int i = 0; i < fullname.length(); i++) {
                 if ((fullname.charAt(i) < 'a' || fullname.charAt(i) > 'z') && (fullname.charAt(i) < 'A' || fullname.charAt(i) > 'Z') && fullname.charAt(i) != ' ') {
                     isEverythingOk = false;
                     e_fullname_lay.setError("Your Academic Name Can not contain any special Characters");
+                    e_fullname_lay.requestFocus();
                     break;
                 }
             }
@@ -549,6 +556,7 @@ public class SignUp extends AppCompatActivity {
         if (academic_id.isEmpty()) {
             isEverythingOk = false;
             e_academic_id_lay.setError("Must enter your academic ID");
+            e_academic_id_lay.requestFocus();
         }
         //Gender
         if (gender.isEmpty()) {
@@ -559,11 +567,13 @@ public class SignUp extends AppCompatActivity {
         if (phone1.isEmpty()) {
             isEverythingOk = false;
             e_phone1_lay.setError("Must enter a Phone Number");
+            e_phone1_lay.requestFocus();
         }
         //email
         if (email.isEmpty()) {
             isEverythingOk = false;
             e_email_lay.setError("You must enter your email address");
+            e_email_lay.requestFocus();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             isEverythingOk = false;
             e_email_lay.setError("Invalid email address");

@@ -5,17 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efefef"
-    tools:context=".BatchStudentList">
+    tools:context=".ApprovalPending">
+    <TextView
+        android:id="@+id/pldkjs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Admin Panel"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"/>
     <ListView
-        android:id="@+id/batch_student_listview"
+        android:id="@+id/pending_students_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/pldkjs"
         android:layout_marginTop="4dp"
         android:drawSelectorOnTop="true"
         android:divider="#efefef"
         android:dividerHeight="0dp"/>
     <ProgressBar
-        android:id="@+id/progressBar_batch_student_list"
+        android:id="@+id/progressBar_pending_student_list"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerInParent="true"/>

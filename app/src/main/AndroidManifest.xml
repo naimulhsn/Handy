@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.skillhunternaim.anotherloser.alonechat">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +32,10 @@
         <activity android:name=".ProfileOthers" />
         <activity android:name=".ProfilleOwn" />
         <activity android:name=".BatchStudentList" />
-        <activity android:name=".EditOwnProfile"/>
+        <activity android:name=".EditOwnProfile" />
+        <activity android:name=".AdminPanel" />
+        <activity android:name=".ApprovalPending" />
+        <activity android:name=".ProfileApproval"></activity>
     </application>
 
 </manifest>

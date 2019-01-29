@@ -58,14 +58,30 @@ public class Home extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ///////////////////// Saving user info so that it can be used in all the Fragments easily.
-        saveUserInfoInSharedPref();
-        Fragment fragment=new FragmentRoutine();
-        if(fragment!=null){
+        //saveUserInfoInSharedPref();
+        Fragment fragment=new Fragment();
+        if(sharedPreferences.contains("frag")){
+            if(sharedPreferences.getString("frag","").equals("1")){
+                toolbar.setTitle("Routine");
+                fragment=new FragmentRoutine();
+            }else if(sharedPreferences.getString("frag","").equals("2")){
+                toolbar.setTitle("Students");
+                fragment=new FragmentStudentsBatch();
+            }else{
+                toolbar.setTitle("Personal Notes");
+                fragment=new FragmentsListNotes();
+            }
+
+        }else {
+            toolbar.setTitle("Routine");
+            fragment=new FragmentRoutine();
+
+        }
             FragmentManager fragmentManager=getSupportFragmentManager();
             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.id_content_fragment_holder,fragment);
             fragmentTransaction.commit();
-        }
+
 
 
 
@@ -130,6 +146,11 @@ public class Home extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_profile) {
             Intent intent=new Intent(this,ProfilleOwn.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (id == R.id.action_admin) {
+            Intent intent=new Intent(this,AdminPanel.class);
             startActivity(intent);
             return true;
         }
@@ -201,29 +222,29 @@ public class Home extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private void saveUserInfoInSharedPref() {
-        currUser= FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("user");
-        ref.child(Objects.requireNonNull(currUser.getDisplayName())).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ModelStudent m=dataSnapshot.getValue(ModelStudent.class);
-
-                userInfoPref=getSharedPreferences("userInfo",MODE_PRIVATE);
-                SharedPreferences.Editor editor = userInfoPref.edit();
-                editor.putString("fullname", Objects.requireNonNull(m).getFullname());
-                editor.putString("university",m.getUniversity());
-                editor.putString("dept",m.getDept());
-                editor.putString("batch",m.getBatch());
-                editor.putString("user_id",currUser.getDisplayName());
-                editor.apply();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Error in getting dir",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
+//    private void saveUserInfoInSharedPref() {
+//        currUser= FirebaseAuth.getInstance().getCurrentUser();
+//        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("user");
+//        ref.child(Objects.requireNonNull(currUser.getDisplayName())).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                ModelStudent m=dataSnapshot.getValue(ModelStudent.class);
+//
+//                userInfoPref=getSharedPreferences("userInfo",MODE_PRIVATE);
+//                SharedPreferences.Editor editor = userInfoPref.edit();
+//                editor.putString("fullname", Objects.requireNonNull(m).getFullname());
+//                editor.putString("university",m.getUniversity());
+//                editor.putString("dept",m.getDept());
+//                editor.putString("batch",m.getBatch());
+//                editor.putString("user_id",currUser.getDisplayName());
+//                editor.apply();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(getApplicationContext(),"Error in getting dir",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
 }

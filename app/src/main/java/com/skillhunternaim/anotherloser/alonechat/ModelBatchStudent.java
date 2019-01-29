@@ -6,7 +6,7 @@ public class ModelBatchStudent {
             fullname, academic_id, gender ,
             phone1, phone2, email, blood ,
             current_address, hometown,
-            university, dept , batch ,userId;
+            university, dept , batch ,userId,admin,approved,uId;
 
     public ModelBatchStudent() {
     }
@@ -15,7 +15,7 @@ public class ModelBatchStudent {
                         String gender, String phone1, String phone2,
                         String email, String blood, String current_address,
                         String hometown, String university,
-                        String dept, String batch,String userId) {
+                        String dept, String batch,String userId,String admin,String approved,String uId) {
         this.profilePic = profilePic;
         this.fullname = fullname;
         this.academic_id = academic_id;
@@ -30,6 +30,33 @@ public class ModelBatchStudent {
         this.dept = dept;
         this.batch = batch;
         this.userId=userId;
+        this.admin=admin;
+        this.approved=approved;
+        this.uId=uId;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
+    public String getApproved() {
+        return approved;
+    }
+
+    public void setApproved(String approved) {
+        this.approved = approved;
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
     }
 
     //Getter Setter

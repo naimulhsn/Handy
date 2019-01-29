@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TestActivity">
 
+
     <TextView
-        android:id="@+id/textView"
+        android:visibility="gone"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextViewasdgasdgasgasd"
-        android:textSize="90sp"/>
-</android.support.constraint.ConstraintLayout>
+        android:gravity="center"
+        android:text="Ask Admin or Class Representative to Approve your Account."
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        android:textSize="35sp"/>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:text="Or contact Developers for approval."
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+    <ProgressBar
+        android:id="@+id/progressBar_test_activity"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

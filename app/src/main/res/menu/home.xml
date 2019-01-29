@@ -8,8 +8,14 @@
         android:icon="@drawable/ic_profile_person_black_24dp"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_admin"
+        android:orderInCategory="101"
+        android:title="Admin Panel"
+        android:icon="@drawable/ic_students_black_24dp"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_Logout"
-        android:orderInCategory="100"
+        android:orderInCategory="102"
         android:title="Logout"
         android:icon="@drawable/ic_logout_left_black_24dp"
         app:showAsAction="never" />
