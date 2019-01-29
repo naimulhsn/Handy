@@ -20,6 +20,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class BatchStudentList extends AppCompatActivity {
     AdapterBatchStudentList adapter;
@@ -54,7 +55,7 @@ public class BatchStudentList extends AppCompatActivity {
 
                     ModelBatchStudent m=data.getValue(ModelBatchStudent.class);
 
-                    if(m.getApproved().equals("True")) {
+                    if(Objects.requireNonNull(m).getApproved().equals("True")) {
                         arr.add(m);
                     }
                 }

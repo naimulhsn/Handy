@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TestActivity">
+    <Button
+        android:visibility="gone"
+        android:id="@+id/Logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorwhite"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        />
+
 
 
     <TextView

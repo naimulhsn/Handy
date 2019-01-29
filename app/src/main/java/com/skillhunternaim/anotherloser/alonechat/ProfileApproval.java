@@ -1,5 +1,6 @@
 package com.skillhunternaim.anotherloser.alonechat;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -12,21 +13,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class ProfileApproval extends AppCompatActivity {
-    SharedPreferences userInfo;
     TextView academic_id,fullname,gender,phone1,phone2,email,blood,current_address,hometown,university,dept,batch;
     ImageView call_phone1,call_phone2,email_send;
     Button btn_approve,btn_delete;
-    String userId,uni,dpt,btch;
+    String userId,uni,dpt,btch,uId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +90,7 @@ public class ProfileApproval extends AppCompatActivity {
                 academic_id.setText(m.getAcademic_id());
                 current_address.setText(m.getCurrent_address());
                 hometown.setText(m.getHometown());
+                uId=m.getuId();
 
                 show();
 
@@ -103,8 +113,59 @@ public class ProfileApproval extends AppCompatActivity {
                 show();
             }
         });
+        btn_approve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                approve();
+
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete();
+            }
+        });
 
 
+
+    }
+
+
+    public void approve(){
+        final ProgressDialog pd = new ProgressDialog(ProfileApproval.this);
+        pd.setTitle("Approving....");
+        pd.setMessage("please wait.");
+        btn_approve.setClickable(false);
+        btn_delete.setClickable(false);
+        pd.show();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(""+uni+dpt).child(btch).child(userId);
+
+        HashMap<String , Object> hashMap = new HashMap<>();
+        hashMap.put("approved","true");
+        reference.updateChildren(hashMap);
+        pd.dismiss();
+        finish();
+
+    }
+
+    public void delete() {
+        final ProgressDialog pd = new ProgressDialog(ProfileApproval.this);
+        pd.setTitle("Deleting....");
+        pd.setMessage("please wait.");
+        btn_approve.setClickable(false);
+        btn_delete.setClickable(false);
+        pd.show();
+
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("user").child(userId);
+
+        reference.removeValue();
+        DatabaseReference ref=FirebaseDatabase.getInstance().getReference().child(""+uni+dpt).child(btch).child(userId);
+        ref.removeValue();
+
+        pd.dismiss();
+        finish();
 
     }
 

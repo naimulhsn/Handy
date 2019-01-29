@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +24,12 @@ import java.util.Objects;
 public class TestActivity extends AppCompatActivity {
     private TextView t1,t2;
     private ProgressBar p;
+    private Button btn;
 
 
     SharedPreferences userInfoPref;
     FirebaseUser currUser;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +37,31 @@ public class TestActivity extends AppCompatActivity {
         t1=findViewById(R.id.textView1);
         t2=findViewById(R.id.textView2);
         p=findViewById(R.id.progressBar_test_activity);
+        btn=findViewById(R.id.Logout_btn);
+        btn.setVisibility(View.GONE);
         t1.setVisibility(View.GONE);
         t2.setVisibility(View.GONE);
         p.setVisibility(View.VISIBLE);
 
+        mAuth=FirebaseAuth.getInstance();
+
 
         saveUserInfoInSharedPref();
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                currUser=mAuth.getCurrentUser();
+                SharedPreferences s=getSharedPreferences("userInfo",MODE_PRIVATE);
+                SharedPreferences.Editor editor=s.edit();
+                editor.clear();
+                editor.apply();
+
+                Intent intent=new Intent(getApplicationContext(),Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
     private void saveUserInfoInSharedPref() {
@@ -69,6 +91,7 @@ public class TestActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }else {
+                            btn.setVisibility(View.VISIBLE);
                             p.setVisibility(View.GONE);
                             t1.setVisibility(View.VISIBLE);
                             t2.setVisibility(View.VISIBLE);

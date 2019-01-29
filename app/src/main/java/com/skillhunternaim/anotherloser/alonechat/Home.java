@@ -58,7 +58,7 @@ public class Home extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ///////////////////// Saving user info so that it can be used in all the Fragments easily.
-        //saveUserInfoInSharedPref();
+        saveUserInfoInSharedPref();
         Fragment fragment=new Fragment();
         if(sharedPreferences.contains("frag")){
             if(sharedPreferences.getString("frag","").equals("1")){
@@ -222,29 +222,29 @@ public class Home extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-//    private void saveUserInfoInSharedPref() {
-//        currUser= FirebaseAuth.getInstance().getCurrentUser();
-//        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("user");
-//        ref.child(Objects.requireNonNull(currUser.getDisplayName())).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                ModelStudent m=dataSnapshot.getValue(ModelStudent.class);
-//
-//                userInfoPref=getSharedPreferences("userInfo",MODE_PRIVATE);
-//                SharedPreferences.Editor editor = userInfoPref.edit();
-//                editor.putString("fullname", Objects.requireNonNull(m).getFullname());
-//                editor.putString("university",m.getUniversity());
-//                editor.putString("dept",m.getDept());
-//                editor.putString("batch",m.getBatch());
-//                editor.putString("user_id",currUser.getDisplayName());
-//                editor.apply();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText(getApplicationContext(),"Error in getting dir",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//    }
+    private void saveUserInfoInSharedPref() {
+        currUser= FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("user");
+        ref.child(Objects.requireNonNull(currUser.getDisplayName())).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ModelStudent m=dataSnapshot.getValue(ModelStudent.class);
+
+                userInfoPref=getSharedPreferences("userInfo",MODE_PRIVATE);
+                SharedPreferences.Editor editor = userInfoPref.edit();
+                editor.putString("fullname", Objects.requireNonNull(m).getFullname());
+                editor.putString("university",m.getUniversity());
+                editor.putString("dept",m.getDept());
+                editor.putString("batch",m.getBatch());
+                editor.putString("user_id",currUser.getDisplayName());
+                editor.apply();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Error in getting dir",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 }

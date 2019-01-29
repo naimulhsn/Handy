@@ -73,6 +73,7 @@ public class Login extends AppCompatActivity {
     public void signup(View view){
         Intent i=new Intent(getApplicationContext(),SignUp.class);
         startActivity(i);
+        finish();
     }
 
 
