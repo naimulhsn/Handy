@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BSMRSTU"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CSE"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/batch_list_5th"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="5th Batch"
+        android:textColor="@color/colorwhite"
+        android:textSize="24sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
+    <Button
+        android:id="@+id/batch_list_6th"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="6th Batch"
+        android:textColor="@color/colorwhite"
+        android:textSize="24sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
+    <Button
+        android:id="@+id/batch_list_7th"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="7th Batch"
+        android:textColor="@color/colorwhite"
+        android:textSize="24sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
+    <Button
+        android:id="@+id/batch_list_8th"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="8th Batch"
+        android:textColor="@color/colorwhite"
+        android:textSize="24sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="Handy "
+            style="@style/mcwText6"
+            android:textStyle="bold|italic"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/id_login_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/id_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:singleLine="true"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/id_login_pass_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/id_login_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:singleLine="true"
+                android:hint="Password"
+                android:drawableStart="@drawable/ic_password_key"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Sign In"
+            style="@style/mcwText2"
+            android:textStyle="bold|italic"
+            android:textAllCaps="false"
+            android:onClick="signinClicked"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDy="2"
+            android:shadowRadius="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Registered?"/>
+        <TextView
+            android:id="@+id/id_login_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp"
+            style="@style/mcsText1"
+            android:textStyle="bold"
+            android:onClick="signup"
+            />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar_login"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

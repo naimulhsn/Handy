@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "432715032861",
+    "firebase_url": "https://alonechat-c9cca.firebaseio.com",
+    "project_id": "alonechat-c9cca",
+    "storage_bucket": "alonechat-c9cca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432715032861:android:b300e17d057581ba",
+        "android_client_info": {
+          "package_name": "com.skillhunternaim.anotherloser.alonechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432715032861-5qde536j8pjpnt3oo8tko7lg9rjn13f4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skillhunternaim.anotherloser.alonechat",
+            "certificate_hash": "d683804240356d26a253b151f048257e5d740638"
+          }
+        },
+        {
+          "client_id": "432715032861-mvn2v1c7geuse26mjih1k1sb1lafdllf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAtotbYPLpJwJvC3QyPgu1NxFmRD_6Zg0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432715032861-mvn2v1c7geuse26mjih1k1sb1lafdllf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_routine"
+            android:icon="@drawable/ic_routine_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Routine" />
+        <item
+            android:id="@+id/nav_students"
+            android:icon="@drawable/ic_students_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Students" />
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/ic_note_black_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Notes" />
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:iconTint="@color/colorPrimary"
+                android:title="Settings" />
+
+            <item
+                android:id="@+id/nav_rate_share"
+                android:icon="@drawable/ic_menu_share"
+                android:iconTint="@color/colorPrimary"
+                android:title="Rate and Share" />
+            <item
+                android:id="@+id/nav_about_developer"
+                android:icon="@drawable/ic_aboutus_black_24dp"
+                android:iconTint="@color/colorPrimary"
+                android:title="About Developer" />
+        </menu>
+    </item>
+</menu>

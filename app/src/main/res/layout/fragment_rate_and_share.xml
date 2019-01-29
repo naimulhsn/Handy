@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="149dp"
+        android:layout_height="132dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:tint="@android:color/holo_orange_light"
+        app:srcCompat="@drawable/ic_star_border_black_24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:text="Rate"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="50sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200sp"
+        android:gravity="center_horizontal"
+        android:text="And"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250sp"
+        android:gravity="center_horizontal"
+        android:text="Share"
+        android:textColor="@color/colorBlue"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="165dp"
+        android:layout_height="141dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp"
+        android:tint="@color/colorBlue"
+        app:srcCompat="@drawable/ic_menu_share" />
+</RelativeLayout>

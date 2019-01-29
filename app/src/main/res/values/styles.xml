@@ -1,0 +1,113 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--my custom Text Styles. -->
+
+    <style name="mcbText1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="mcbText2" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="mcbText3" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="mcbText4" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="mcbText5" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="mcbText6" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="mcwText1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="mcwText2" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="mcwText3" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="mcwText4" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="mcwText5" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="mcwText6" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorwhite</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+
+    <style name="mcsText1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="mcsText2" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="mcsText3" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="mcsText4" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="mcsText5" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="mcsText6" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+
+    <!--my custom Text Styles. -->
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
